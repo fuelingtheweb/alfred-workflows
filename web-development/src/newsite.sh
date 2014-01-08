@@ -237,6 +237,56 @@ if $installWP ; then
 	rm latest.tar.gz
 fi
 
+# Add Sublime SFTP Config
+if $sublimeSFTP ; then
+echo 'Adding Sublime SFTP Configuration File'
+touch "$siteFolder/sftp-config.json"
+echo '
+{
+	// The tab key will cycle through the settings when first created
+	// Visit http://wbond.net/sublime_packages/sftp/settings for help
+
+	// sftp, ftp or ftps
+	"type": "'$protocol'",
+
+	"save_before_upload": true,
+	"upload_on_save": false,
+	"sync_down_on_open": false,
+	"sync_skip_deletes": false,
+	"confirm_downloads": false,
+	"confirm_sync": true,
+	"confirm_overwrite_newer": false,
+
+	"host": "'$ftpAddress'",
+	"user": "'$ftpUser'",
+	"password": "'$ftpPassword'",
+	//"port": "22",
+
+	"remote_path": "'$ftpRemotePath'",
+	"ignore_regexes": [
+		"\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json",
+		"sftp-settings\\.json", "/venv/", "\\.svn", "\\.hg", "\\.git",
+		"\\.bzr", "_darcs", "CVS", "\\.DS_Store", "Thumbs\\.db", "desktop\\.ini"
+	],
+	//"file_permissions": "664",
+	//"dir_permissions": "775",
+
+	//"extra_list_connections": 0,
+
+	"connect_timeout": 30,
+	//"keepalive": 120,
+	"ftp_passive_mode": true,
+	//"ssh_key_file": "~/.ssh/id_rsa",
+	//"sftp_flags": ["-F", "/path/to/ssh_config"],
+
+	//"preserve_modification_times": false,
+	//"remote_time_offset_in_hours": 0,
+	//"remote_encoding": "utf-8",
+	//"remote_locale": "C",
+}
+' > "$siteFolder/sftp-config.json"
+fi
+
 # Initialize Git Repo
 if $initGit ; then
 	echo "Initializing Git Repository"
@@ -304,54 +354,6 @@ osascript <<EOD
 	end tell
 EOD
 fi
-
-# Add Sublime SFTP Config
-echo 'Adding Sublime SFTP Configuration File'
-touch "$siteFolder/sftp-config.json"
-echo '
-{
-	// The tab key will cycle through the settings when first created
-	// Visit http://wbond.net/sublime_packages/sftp/settings for help
-
-	// sftp, ftp or ftps
-	"type": "'$protocol'",
-
-	"save_before_upload": true,
-	"upload_on_save": false,
-	"sync_down_on_open": false,
-	"sync_skip_deletes": false,
-	"confirm_downloads": false,
-	"confirm_sync": true,
-	"confirm_overwrite_newer": false,
-
-	"host": "'$ftpAddress'",
-	"user": "'$ftpUser'",
-	"password": "'$ftpPassword'",
-	//"port": "22",
-
-	"remote_path": "'$ftpRemotePath'",
-	"ignore_regexes": [
-		"\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json",
-		"sftp-settings\\.json", "/venv/", "\\.svn", "\\.hg", "\\.git",
-		"\\.bzr", "_darcs", "CVS", "\\.DS_Store", "Thumbs\\.db", "desktop\\.ini"
-	],
-	//"file_permissions": "664",
-	//"dir_permissions": "775",
-
-	//"extra_list_connections": 0,
-
-	"connect_timeout": 30,
-	//"keepalive": 120,
-	"ftp_passive_mode": true,
-	//"ssh_key_file": "~/.ssh/id_rsa",
-	//"sftp_flags": ["-F", "/path/to/ssh_config"],
-
-	//"preserve_modification_times": false,
-	//"remote_time_offset_in_hours": 0,
-	//"remote_encoding": "utf-8",
-	//"remote_locale": "C",
-}
-' > "$siteFolder/sftp-config.json"
 
 # Restart Server
 echo 'Restarting Server...'
