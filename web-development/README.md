@@ -1,9 +1,5 @@
-Alfred Workflows
+Web Development
 ================
-
-Workflows for [Alfred](http://alfredapp.com) 2
-
-## Web Development
 
 Run various web development tasks using the keyword `.dev`.
 
