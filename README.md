@@ -5,6 +5,8 @@ Workflows for [Alfred](http://alfredapp.com) 2
 
 ## Web Development
 
+[Download Workflow](https://github.com/fuelingtheweb/alfred-workflows/blob/master/web-development/Web%20Development.alfredworkflow?raw=true)
+
 Run various web development tasks using the keyword `.dev`.
 
 **Included tasks:**
@@ -52,6 +54,8 @@ After configuring this task, you must hold `cmd` when you select the task in ord
 
 Sublime Package Control
 ---
+
+[Download Workflow](https://github.com/fuelingtheweb/alfred-workflows/blob/master/sublime-package-control/Sublime%20Package%20Control.alfredworkflow?raw=true)
 
 Search Sublime Text's Package Control using the keyword `.spc`.
 
