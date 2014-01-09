@@ -49,3 +49,10 @@ Before using the New Project task, you must select this item while holding `alt`
 	dbPass="password_goes_here"
 
 After configuring this task, you must hold `cmd` when you select the task in order to run the script as a terminal command.
+
+Sublime Package Control
+---
+
+Search Sublime Text's Package Control using the keyword `.spc`.
+
+[Package Control](https://sublime.wbond.net) is a package manager created by [Will Bond](http://wbond.net).
