@@ -2,11 +2,11 @@
 
 # Configuration
 # -----------------------
-# Folder where your new site folder will be saved. i.e. /Users/nathan/Sites/My Site/dev
-parentFolder='/Users/nathan/Sites'
+# Folder where your new site folder will be saved. i.e. /Users/nathan/Development/web
+parentFolder='/Users/nathan/Development/web'
 
-# Folder where your sublime project and workspace files will be saved. i.e. /Users/nathan/Sites/_Projects
-projectsFolder='/Users/nathan/Sites/_Projects'
+# Folder where your sublime project and workspace files will be saved. i.e. /Users/nathan/Development/.sublime-projects
+projectsFolder='/Users/nathan/Development/.sublime-projects'
 
 # Path to your user's apache configuration file
 confFile='/etc/apache2/users/nathan.conf'
