@@ -3,6 +3,14 @@ Web Development
 
 [Download Workflow](https://github.com/fuelingtheweb/alfred-workflows/blob/master/web-development/Web%20Development.alfredworkflow?raw=true)
 
+**To update to use the latest new site script, run this command in Terminal:**
+
+*Note: This will overwrite your configurations. So, you'll need to change the configuration settings again.*
+
+	curl https://raw.github.com/fuelingtheweb/alfred-workflows/master/web-development/src/newsite.sh > ~/.fuel_newsite.sh
+
+---
+
 Run various web development tasks using the keyword `.dev`.
 
 **Included tasks:**
