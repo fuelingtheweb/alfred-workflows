@@ -23,6 +23,12 @@ dbPrefix="dev_"
 dbUser="root"
 dbPass="password_goes_here"
 
+# Use Git Flow (true) or standard Git (false)
+useGitFlow=true
+
+# If using Git Flow, should the defaults be used?
+useGitFlowDefaults=true
+
 # Begin Setup / Get Information
 # -----------------------
 # Set Up New Site
@@ -304,7 +310,16 @@ fi
 # Initialize Git Repo
 if $initGit ; then
 	echo "Initializing Git Repository"
-	git init && git add -A && git commit -m 'Initial Commit'
+	if $useGitFlow ; then
+		if $useGitFlowDefaults ; then
+			git flow init -d
+		else
+			git flow init
+		fi
+	else
+		git init
+	fi
+	git add -A && git commit -m 'Initial Commit'
 fi
 
 # Add Transmit Favorite
