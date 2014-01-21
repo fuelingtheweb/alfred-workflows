@@ -24,7 +24,7 @@ dbUser="root"
 dbPass="password_goes_here"
 
 # Use Git Flow (true) or standard Git (false)
-useGitFlow=true
+useGitFlow=false
 
 # If using Git Flow, should the defaults be used?
 useGitFlowDefaults=true
