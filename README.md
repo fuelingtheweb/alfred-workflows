@@ -50,6 +50,12 @@ Before using the New Project task, you must select this item while holding `alt`
 	dbUser="root"
 	dbPass="password_goes_here"
 
+	# Use Git Flow (true) or standard Git (false)
+	useGitFlow=false
+
+	# If using Git Flow, should the defaults be used?
+	useGitFlowDefaults=true
+
 After configuring this task, you must hold `cmd` when you select the task in order to run the script as a terminal command.
 
 Sublime Package Control
