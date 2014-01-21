@@ -40,6 +40,19 @@ while true; do
     [  -z "$shortName" ] && echo "Enter a short project name." || break
 done
 
+# Get Project URL
+while true; do
+    read -p "Project URL (i.e. myproject.com): " projectUrl
+    [  -z "$projectUrl" ] && echo "Enter a project url." || break
+done
+
+# Folder Name
+echo "Select your desired folder name: "
+select folderName in "$projectName" "$shortName" "$projectUrl"; do
+	break
+done
+siteFolder="$parentFolder/$folderName"
+
 # Create Database?
 while true; do
     read -p "Create database? y/n: " createDB
@@ -131,6 +144,8 @@ while true; do
     read -p "Do you wish to proceed with the following options?
     Project Name (Full): $projectName
     Project Name (Short): $shortName
+    Project URL: $projectUrl
+    Site Path: $siteFolder
     Create Database: $createDB
     Install Wordpress: $installWP
     Initialize Git Repository: $initGit
@@ -149,7 +164,6 @@ done
 # Process Site Creation
 # -----------------------
 # Create Site Folder
-siteFolder="$parentFolder/$shortName"
 echo "Creating site folder: $siteFolder"
 mkdir "$siteFolder"
 
